@@ -1,0 +1,19 @@
+Fetch API is a modern, promise‐based interface for making HTTP requests in JavaScript. It replaces the older XMLHttpRequest (XHR) API with a cleaner, more flexible syntax.
+
+1. How Fetch Works
+Promise‐based: Returns a Promise that resolves to a Response object.
+
+Streamable: You can read response bodies as streams.
+
+Configurable: Supports request methods (GET, POST, PUT, etc.), headers, credentials, timeouts (via AbortController), and more.
+
+2. Real-World Use Cases
+Fetching JSON data from a REST API (e.g. loading a list of users or products).
+
+Submitting form data without a full page reload (AJAX style).
+
+Lazy loading images or content as the user scrolls.
+
+Polling or streaming real-time updates (e.g. chat messages).
+
+File uploads/downloads with progress tracking.
