@@ -1,0 +1,37 @@
+What were the 100 most frequent search terms on your site last year?
+
+The data is a 100 Terabyte log file. It can't be opened on your laptop. It can't even be loaded onto the biggest server you have.
+
+The problem seems impossible. Where do you even begin?
+
+The magic keyword is MapReduce.
+This is the programming model that unlocked the world of big data. The core idea is to break down a massive problem into two simple, parallelizable phases: MAP and REDUCE.
+
+Your job is not to process a giant file. It's to write two tiny functions and let a framework orchestrate their execution across a thousand machines
+
+
+1. Real-World Analogy: Counting Words in a Library
+Imagine you want to know the top 100 most common words across every book in a library of 1 million books, but you only have a pencil and a bunch of friends:
+
+Split up the books
+You hand each friend 10 000 books.
+
+Map phase (per friend):
+Each friend reads their books and writes down for each word “w” a list of pairs
+
+scss
+Copy
+Edit
+(w, 1), (w, 1), …  
+(i.e. “I saw the word ‘the’ 7 times → seven copies of (‘the’, 1)”).
+
+Shuffle & sort (the framework):
+All the little lists from every friend are automatically collected and grouped so that all the (“the”, 1) end up together, all the (“and”, 1) together, etc.
+
+Reduce phase (per unique word):
+A new volunteer takes the group for “the” and sums up all the 1’s to get (“the”, TotalCount).
+
+Final ranking:
+Once every word has its total count, sort by count descending and take the top 100.
+
+That’s MapReduce in a nutshell: MAP⇒emit key/value pairs; SHUFFLE⇒group by key; REDUCE⇒aggregate per key.
