@@ -1,0 +1,7 @@
+To install django - pip3 install django
+To get started with django - django-admin startproject PROJECT_NAME
+To execute/start the server - python manage.py runserver
+
+Django allows us to create many apps inside the roots django PROJECT_NAME
+
+To create an app - python manage.py startapp <app-name?
