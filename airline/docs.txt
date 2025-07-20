@@ -1,0 +1,4 @@
+create a model
+python manage.py makemigrations
+
+python manage.py migrate -- to apply the changes
